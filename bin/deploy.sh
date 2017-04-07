@@ -16,8 +16,10 @@ rm -fr .git
 rm -fr bin
 rm -fr node_modules
 rm -fr .gitignore
+rm -fr .gitattributes
 rm -fr .travis.yml
 rm -fr package.json
+rm -fr open-streets-dc.mbtiles
 
 git init
 git config user.name $GIT_USER
