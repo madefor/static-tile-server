@@ -5,11 +5,23 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server -i -o",
-    "build": "rm -fr tiles && mb-util open-streets-dc.mbtiles tiles"
+    "build": "rm -fr tiles && mb-util open-streets-dc.mbtiles tiles && gulp"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "http-server": "^0.9.0"
+    "http-server": "^0.9.0",
+    "babel-core": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
+    "browserify": "^14.1.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-uglify": "^2.1.0",
+    "riotify": "^2.0.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.23.0"
   }
 }

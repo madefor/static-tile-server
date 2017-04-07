@@ -15,11 +15,13 @@ fi
 rm -fr .git
 rm -fr bin
 rm -fr node_modules
+rm -fr src
 rm -fr .gitignore
 rm -fr .gitattributes
 rm -fr .travis.yml
-rm -fr package.json
+rm -fr gulpfile.js
 rm -fr open-streets-dc.mbtiles
+rm -fr package.json
 
 git init
 git config user.name $GIT_USER

@@ -21,39 +21,13 @@
 </head>
 <body>
 
-<div id="mapid" style="width: 100%; height: 100%;"></div>
+<div id="open-streets-dc" style="width: 100%; height: 100%;"></div>
 
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 <script
 			  src="https://code.jquery.com/jquery-3.2.1.min.js"
 			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 			  crossorigin="anonymous"></script>
-
-<script>
-  (function($){
-    $.getJSON("tiles/metadata.json", function(meta){
-      if ( ! document.title ) {
-        document.title = meta.name;
-      }
-      var bounds = meta.bounds.split(/,/)
-      var southWest = new L.latLng([ bounds[1], bounds[2] ]),
-        northEast = new L.latLng([ bounds[3], bounds[0] ]),
-        bounds = new L.latLngBounds(southWest, northEast);
-      var center = meta.center.split(/,/)
-      var map = L.map('mapid', {maxBounds: bounds}).setView([center[1], center[0]], center[2]);
-
-      L.tileLayer('tiles/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        minZoom: meta.minzoom,
-        maxZoom: meta.maxzoom,
-        bounds: bounds,
-        attribution: meta.attribution
-      }).addTo(map);
-    });
-  })(jQuery)
-</script>
-
-
-
+<script src="js/map.min.js"></script>
 </body>
 </html>
