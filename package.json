@@ -1,0 +1,15 @@
+{
+  "name": "map",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -i -o",
+    "build": "rm -fr tiles && mb-util open-streets-dc.mbtiles tiles"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+  <title>Quick Start - Leaflet</title>
+  <style media="screen">
+    html,body
+    {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .leaflet-container
+    {
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+<div id="mapid" style="width: 100%; height: 100%;"></div>
+
+<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+<script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+
+<script>
+  (function($){
+    $.getJSON("tiles/metadata.json", function(meta){
+      var bounds = meta.bounds.split(/,/)
+      var southWest = new L.latLng([ bounds[1], bounds[2] ]),
+        northEast = new L.latLng([ bounds[3], bounds[0] ]),
+        bounds = new L.latLngBounds(southWest, northEast);
+      var center = meta.center.split(/,/)
+      var map = L.map('mapid', {maxBounds: bounds}).setView([center[1], center[0]], center[2]);
+
+      L.tileLayer('tiles/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        minZoom: meta.minzoom,
+        maxZoom: meta.maxzoom,
+        bounds: bounds,
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+          '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+      }).addTo(map);
+    });
+  })(jQuery)
+</script>
+
+
+
+</body>
+</html>
