@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- 7.8
+
+before_script:
+- pip install mbutil --user
+
+script:
+- npm run build
+
+after_success: bash ./bin/deploy.sh
+
+env:
+  global:
+  - GIT_USER: Travis CI
+  - GIT_EMAIL: miya0001@users.noreply.github.com
+  - GH_REF: github.com/miya0001/static-map
+  - secure: "GC/v1R12OziIo+CfXAoeZwimYiQ2b0CHTbCulz9wnVTas68NUb1Twjnc+kJrhM3vAGH/562K1l7JsoV7ULkuy9d4W3WYa7z/D03O8hvq9CshakeM0QFIpwwNw88rdQRhQ0NkLdZK13/CH+Qv2tHcVWNwap2Pht6hKAw8IFmjTF5oalRKj0iWtYlO+d+tILel6hbkBvjASurdgCFZs5Q7G03SyBz9e5hp/P5FPPc3OpWPXH712rA4kpVUj+t6l/HNvl/xa4p0q3ereNI3FflaQXunyCo5oX8T8LleuXYTpTawgkb2KcShEo9ron1GaGiUzaMqSMLPNbWBYDZsfG3BAGi0juM2cNB4Zrcydmk/Pw1oc5rPVnb9JVQP2g9FALQ6LFMTKHCsT4YW1jnIh6gP2lvLI9XGAflOakeC2KEGAx+hZz1GKQehQP+b7yLPi+lCv8Abyks81967fMPlpXnwu8WM+qbReyRsJ/rfG933+aZMc4ZcJkTcM+mzCNC77uDwMBUe15vByk5g4Y+jHz4LNTut0wUWF7ymxp5YmUfB/TpZKMsqrBqd6oOMzKQtWve/pYgmy54l/PwGO+99AsGqwJQK9+Yd0ObPzE97BbjW4yz7K7VOJY+38JewTgCv5txNPS5pNpbd755/jt+Z50ya0zNtx1xX46PLWOvep93faM0="
