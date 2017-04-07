@@ -28,7 +28,6 @@ const center = meta.center.split( /,/ )
 const map = L.map( meta.id, { maxBounds: bbox } ).setView( [ center[1], center[0] ], center[2] );
 
 L.tileLayer( current() + '/tiles/{z}/{x}/{y}.png', {
-  maxZoom: 18,
   minZoom: meta.minzoom,
   maxZoom: meta.maxzoom,
   bounds: bbox,
