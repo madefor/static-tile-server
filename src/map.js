@@ -13,9 +13,7 @@ var current = () => {
       src = script.src;
     }
   }
-  const a = document.createElement( 'a' );
-  a.href = src;
-  return a.protocol + '//' + a.host;
+  return src.replace( '/js/map.min.js' )
 };
 
 if ( ! document.title ) {
