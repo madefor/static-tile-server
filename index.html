@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-  <title>Quick Start - Leaflet</title>
   <style media="screen">
     html,body
     {
@@ -33,6 +32,9 @@
 <script>
   (function($){
     $.getJSON("tiles/metadata.json", function(meta){
+      if ( ! document.title ) {
+        document.title = meta.name;
+      }
       var bounds = meta.bounds.split(/,/)
       var southWest = new L.latLng([ bounds[1], bounds[2] ]),
         northEast = new L.latLng([ bounds[3], bounds[0] ]),
@@ -45,8 +47,7 @@
         minZoom: meta.minzoom,
         maxZoom: meta.maxzoom,
         bounds: bounds,
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-          '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+        attribution: meta.attribution
       }).addTo(map);
     });
   })(jQuery)
