@@ -13,7 +13,7 @@ var current = () => {
       src = script.src;
     }
   }
-  return src.replace( '/js/map.min.js' )
+  return src.replace( '/js/map.min.js', '' )
 };
 
 if ( ! document.title ) {
