@@ -21,3 +21,7 @@ $ npm install
 $ npm run Build
 $ npm start
 ```
+
+## Customizing the MAP with Leaflet.
+
+The object of the leaflet is `window.map`.
