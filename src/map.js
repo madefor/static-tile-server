@@ -1,5 +1,6 @@
 "use strict";
 
+const L = require( 'leaflet' )
 const meta = require( '../tiles/metadata.json' );
 
 var current = () => {
