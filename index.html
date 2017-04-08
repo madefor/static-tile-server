@@ -17,6 +17,13 @@
     {
       background-color: #ffffff;
     }
+    .legend
+    {
+      background-color: #FFFFFF;
+      padding: 10px;
+      border: 1px solid #DEDEDE;
+      box-shadow: 1px 1px 2px 0 rgba( 0, 0, 0, 0.1 );
+    }
   </style>
 </head>
 <body>
@@ -25,5 +32,9 @@
 
 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 <script src="js/map.min.js"></script>
+<script type="text/javascript">
+  var center = meta.center.split( /,/ );
+  L.marker( [ center[1], center[0] ] ).addTo( map );
+</script>
 </body>
 </html>

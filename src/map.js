@@ -1,6 +1,6 @@
 "use strict";
 
-const meta = require( '../tiles/metadata.json' );
+global.meta = require( '../tiles/metadata.json' );
 
 var current = () => {
   let src = '';
@@ -35,3 +35,13 @@ L.tileLayer( current() + '/tiles/{z}/{x}/{y}.png', {
   bounds: bbox,
   attribution: meta.attribution
 } ).addTo( map );
+
+const legend = L.control( { position: 'bottomright' } );
+
+legend.onAdd = ( map ) => {
+  this._div = L.DomUtil.create( 'div', 'legend' );
+  this._div.innerHTML = meta.legend;
+  return this._div;
+}
+
+legend.addTo( map );
