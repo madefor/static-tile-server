@@ -4,7 +4,7 @@
 
 This is an exmaple project of the static tile server with the GitHub Pages.
 
-https://madefor.github.io/tile-server/
+https://madefor.github.io/static-tile-server/
 
 ## Features
 
