@@ -4,10 +4,11 @@ node_js:
 
 before_script:
 - pip install mbutil --user
-
-script:
 - npm run build-tile
 - npm run build
+
+script:
+- cat tiles/metadata.json | jq .
 
 after_success: bash ./bin/deploy.sh
 
