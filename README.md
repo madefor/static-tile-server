@@ -1,6 +1,6 @@
 # Static Tile Server with a MBTiles on GitHub Pages
 
-[![Build Status](https://travis-ci.org/miya0001/tile-server.svg?branch=master)](https://travis-ci.org/miya0001/tile-server)
+[![Build Status](https://travis-ci.org/madefor/static-tile-server.svg?branch=master)](https://travis-ci.org/madefor/static-tile-server)
 
 This is an exmaple project of the static tile server with the GitHub Pages.
 
