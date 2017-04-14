@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server -i -o",
-    "build": "rm -fr tiles && mb-util open-streets-dc.mbtiles tiles && gulp"
+    "build-tile": "rm -fr tiles && mb-util open-streets-dc.mbtiles tiles",
+    "build": "gulp"
   },
   "author": "",
   "license": "MIT",

@@ -6,6 +6,7 @@ before_script:
 - pip install mbutil --user
 
 script:
+- npm run build-tile
 - npm run build
 
 after_success: bash ./bin/deploy.sh
