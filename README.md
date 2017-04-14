@@ -24,4 +24,13 @@ $ npm start
 
 ## Customizing the MAP with Leaflet.
 
-The object of the leaflet is `window.map`.
+You can use `window.MAP` to customize the map object of the leaflet.
+
+```
+<script type="text/javascript">
+  var center = MAP.meta.center.split( /,/ );
+  L.marker( [ center[1], center[0] ] ).addTo( MAP );
+</script>
+```
+
+`Map.meta` is the meta data from the `.mbtiles`.
